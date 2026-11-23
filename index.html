@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Voyage Gourmand — a fine chocolate collection inspired by six continents.">
+<title>Voyage Gourmand — One Bite. Six Continents.</title>
+<style>
+:root{--ink:#2d1a12;--brown:#5a3525;--gold:#c39a56;--cream:#f6f0e7;--paper:#fffdf9;--muted:#78685c;--sage:#64765b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.6}
+a{color:inherit;text-decoration:none}.topbar{position:sticky;top:0;z-index:10;background:rgba(45,26,18,.96);color:#fff8ee;padding:14px 5vw;display:flex;justify-content:space-between;align-items:center;gap:24px}.brand{font-size:1.1rem;letter-spacing:.14em;text-transform:uppercase}.nav{display:flex;gap:24px;font: .8rem Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase}.nav a{opacity:.85}.nav a:hover{color:var(--gold);opacity:1}.menu{display:none;background:none;border:1px solid #9f8055;color:#fff;padding:8px 12px}
+.hero{min-height:650px;background:var(--ink);color:#fff8ef;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:70px 7vw;gap:5vw}.eyebrow{font:700 .75rem Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}h1{font-size:clamp(3.3rem,7vw,6.8rem);line-height:.98;letter-spacing:-.055em;margin:20px 0}.tagline{font-size:clamp(1.25rem,2vw,1.8rem);font-style:italic;color:#e2c99d}.hero p{font:1rem Arial,sans-serif;color:#e4d8cc;max-width:430px}.hero img{width:100%;box-shadow:0 24px 60px #0006}.rule{width:58px;height:3px;background:var(--gold);margin:28px 0}.btn{display:inline-block;margin-top:18px;background:var(--gold);color:var(--ink);padding:14px 24px;font:700 .78rem Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;transition:.2s}.btn:hover{transform:translateY(-2px);background:#d8b575}
+section{padding:90px 7vw}.section-head{max-width:720px;margin-bottom:42px}.section-head h2{font-size:clamp(2.2rem,4vw,3.6rem);line-height:1.05;margin:10px 0 14px;letter-spacing:-.04em}.section-head p{font:1rem/1.7 Arial,sans-serif;color:var(--muted)}.cream{background:var(--cream)}.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:6vw;align-items:center}.intro-grid img,.box-grid img,.flavour-photo{width:100%;display:block}.base-note{background:#eee4d2;padding:22px 25px;margin-bottom:25px}.base-note strong{display:block;color:var(--brown);font-size:1.2rem}.base-note p{margin:4px 0 0;font:1rem Arial,sans-serif}.region-list{display:grid;gap:15px;font:1rem Arial,sans-serif}.region-list p{margin:0}.region-list strong{font-family:Georgia,serif}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{background:var(--cream);padding:28px;min-height:210px;border:1px solid #eee6db}.card .symbol{font-size:1.6rem;color:var(--gold)}.card h3{font-size:1.5rem;margin:12px 0 8px}.card p{font:1rem/1.6 Arial,sans-serif;color:var(--muted);margin:0}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:5vw;align-items:center}.split-copy{display:grid;gap:28px}.copy-block{border-left:1px solid #c9b99f;padding-left:28px}.copy-block .eyebrow{color:#956b42}.copy-block h3{font-size:1.65rem;margin:8px 0}.copy-block p{font:1rem/1.65 Arial,sans-serif;color:var(--muted);margin:8px 0}
+.pack-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center}.mini-cards{display:grid;gap:18px}.mini{background:var(--cream);padding:22px 25px}.mini h3{margin:0 0 5px;font-size:1.3rem}.mini p{margin:0;font:1rem Arial,sans-serif;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;text-align:center}.stat strong{font-size:clamp(2.8rem,5vw,4.5rem);color:#98653e;display:block;line-height:1.1}.stat span{font:700 .9rem Arial,sans-serif}.stat p{font:1rem Arial,sans-serif;color:var(--muted);max-width:250px;margin:10px auto}
+.sales{display:grid;grid-template-columns:1fr 1fr;gap:18px}.sales .mini{background:white}.price-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}.price{background:var(--cream);padding:28px;margin-bottom:16px}.price strong{font-size:2.8rem;display:block;line-height:1.2}.price small{font:700 .75rem Arial,sans-serif;letter-spacing:.13em;color:#956b42;text-transform:uppercase}.price p{font:1rem Arial,sans-serif;color:var(--muted);margin:6px 0 0}
+.final{background:var(--ink);color:#fff8ef;text-align:center;padding:100px 7vw}.final h2{font-size:clamp(2.8rem,6vw,5rem);margin:12px 0}.final p{font:1.1rem/1.7 Arial,sans-serif;color:#e4d8cc;max-width:620px;margin:0 auto}.final .rule{margin:28px auto}footer{background:#21120d;color:#cdbda9;padding:22px 7vw;display:flex;justify-content:space-between;gap:20px;font: .8rem Arial,sans-serif}
+@media(max-width:800px){.hero,.intro-grid,.split,.pack-grid,.price-grid{grid-template-columns:1fr}.hero{padding:60px 7vw}.hero img{max-width:620px}.cards{grid-template-columns:1fr 1fr}.nav{display:none;position:absolute;top:57px;left:0;right:0;background:var(--ink);padding:20px 7vw;flex-direction:column}.nav.open{display:flex}.menu{display:block}.stats{gap:12px}.stat strong{font-size:2.6rem}}
+@media(max-width:520px){section{padding:65px 6vw}.cards,.stats,.sales{grid-template-columns:1fr}.hero{min-height:auto}.topbar{padding:13px 6vw}.brand{font-size:.9rem}footer{flex-direction:column}}
+</style>
+
+<style>
+.mock-browser{background:#e9e7e3;padding:10px 5vw;display:flex;align-items:center;gap:12px;font:12px Arial,sans-serif;color:#554d46}
+.mock-dots{display:flex;gap:5px}.mock-dots i{width:9px;height:9px;border-radius:50%;background:#b8aaa0;display:block}
+.mock-address{background:#fff;border:1px solid #d7d0c8;border-radius:20px;padding:7px 18px;flex:1;max-width:560px;color:#766b62}
+.mock-note{margin-left:auto;font-size:11px;letter-spacing:.04em}
+@media(max-width:600px){.mock-note{display:none}}
+</style>
+
+<style>
+.shop-cta{display:inline-flex;align-items:center;gap:9px;margin:18px 0 0 12px;border:1px solid #c39a56;color:#fff8ef;padding:13px 20px;font:700 .78rem Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;background:transparent;cursor:pointer}
+.shop-cta:hover{background:#ffffff14}
+.cart-pill{border:1px solid #9f8055;background:transparent;color:#fff8ee;padding:9px 13px;font:700 .75rem Arial,sans-serif;cursor:pointer;white-space:nowrap}
+.shop-section{background:#f6f0e7;padding:75px 7vw}
+.shop-product{display:grid;grid-template-columns:1fr 1fr;gap:5vw;align-items:center;background:#fffdf9;padding:28px}
+.shop-product img{width:100%;display:block}
+.shop-copy h2{font-size:clamp(2.1rem,4vw,3.5rem);line-height:1.05;margin:10px 0}
+.shop-price{font-size:2.2rem;color:#98653e;margin:12px 0}
+.shop-copy p{font:1rem/1.7 Arial,sans-serif;color:#78685c}
+.shop-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:22px}
+.qty{display:flex;align-items:center;border:1px solid #d8cbbb}
+.qty button{border:0;background:#f6f0e7;padding:12px 15px;font-size:1.1rem;cursor:pointer}
+.qty span{min-width:38px;text-align:center;font:700 .95rem Arial,sans-serif}
+.shop-button{border:0;background:#c39a56;color:#2d1a12;padding:14px 22px;font:700 .78rem Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+.shop-button:hover{background:#d8b575}
+.shop-overlay{display:none;position:fixed;inset:0;background:#160d0bd9;z-index:30;align-items:center;justify-content:center;padding:18px}
+.shop-overlay.open{display:flex}
+.shop-panel{background:#fffdf9;color:#2d1a12;width:min(600px,100%);max-height:92vh;overflow:auto;padding:28px;position:relative}
+.shop-panel h2{font-size:2rem;margin:4px 0 18px}
+.shop-close{position:absolute;right:18px;top:15px;border:0;background:none;font-size:1.6rem;cursor:pointer}
+.cart-line{display:flex;justify-content:space-between;gap:18px;padding:14px 0;border-bottom:1px solid #e8dfd3;font: .95rem Arial,sans-serif}
+.cart-total{display:flex;justify-content:space-between;font:700 1.1rem Arial,sans-serif;padding:18px 0}
+.checkout-form{display:grid;gap:12px;margin-top:16px}
+.checkout-form label{font:700 .78rem Arial,sans-serif;letter-spacing:.04em}
+.checkout-form input,.checkout-form textarea{width:100%;padding:12px;border:1px solid #d8cbbb;background:white;font:1rem Arial,sans-serif;margin-top:5px}
+.checkout-form .shop-button{width:100%;margin-top:8px}
+.shop-small{font: .78rem/1.5 Arial,sans-serif;color:#78685c}
+.confirmation{display:none;text-align:center;padding:25px 5px}
+.confirmation .check{font-size:3rem;color:#64765b}
+@media(max-width:800px){.shop-product{grid-template-columns:1fr}.shop-cta{margin-left:0}.topbar{flex-wrap:wrap}}
+</style>
+
+</head>
+<body>
+<div class="mock-browser" aria-label="Fictional browser preview">
+  <span class="mock-dots"><i></i><i></i><i></i></span>
+  <span class="mock-address">https://www.voyagegourmand.com</span>
+  <span class="mock-note">COURSE PROJECT · WEBSITE MOCKUP</span>
+</div>
+<header class="topbar">
+  <a class="brand" href="#accueil">Voyage Gourmand</a>
+  <button class="menu" aria-label="Open menu" onclick="document.querySelector('.nav').classList.toggle('open')">Menu ☰</button>
+  <nav class="nav">
+    <a href="#collection">The six flavours</a><a href="#engagements">Our commitments</a><a href="#ecrin">The box</a><a href="#collectionner">The collection</a>
+  </nav>
+  <button class="cart-pill" onclick="openCart()">BAG · <span id="cart-count">0</span></button>
+</header>
+<main>
+<section class="hero" id="accueil">
+  <div>
+    <div class="eyebrow">Fine chocolate collection</div>
+    <h1>Voyage<br>Gourmand</h1>
+    <div class="tagline">One Bite. Six Continents.</div>
+    <p>More than chocolate: a sensory journey through the regions and cultures of the world.</p>
+    <div class="rule"></div>
+    <a class="btn" href="#collection">Discover the collection</a>
+    <button class="shop-cta" onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">Shop the box ↗</button>
+  </div>
+  <img src="images/hero.jpg" alt="Voyage Gourmand gift box styled with a vintage world map">
+</section>
+
+<section class="cream" id="collection">
+  <div class="section-head"><div class="eyebrow">One collection, six destinations</div><h2>Chocolate is your passport.</h2><p>A rich dark chocolate base brings together six distinctive flavours, each inspired by a continent.</p></div>
+  <div class="intro-grid">
+    <div>
+      <div class="base-note"><strong>The signature: dark chocolate</strong><p>A rich cocoa canvas bringing together six distinctive flavours.</p></div>
+      <div class="region-list">
+        <p><strong>Africa</strong> — Tanganyika baobab fruit powder in dark chocolate.</p>
+        <p><strong>North America</strong> — A sweet, woody Canadian maple syrup filling.</p>
+        <p><strong>South America</strong> — Zesty passion fruit paired with aromatic tonka bean.</p>
+      </div>
+    </div>
+    <img src="images/collection.jpg" alt="Illustrated map presenting the six chocolates and their ingredients">
+  </div>
+</section>
+
+<section>
+  <div class="section-head"><div class="eyebrow">The journey continues</div><h2>Three more flavour destinations.</h2></div>
+  <div class="cards">
+    <article class="card"><div class="symbol">✿</div><h3>Europe</h3><p>Floral lavender honey with crunchy Mediterranean almonds.</p></article>
+    <article class="card"><div class="symbol">❧</div><h3>Asia</h3><p>A refined green tea infusion with delicate herbal notes.</p></article>
+    <article class="card"><div class="symbol">◈</div><h3>Oceania</h3><p>Zesty finger lime paired with creamy macadamia praline.</p></article>
+  </div>
+</section>
+
+<section class="cream" id="engagements">
+  <div class="section-head"><div class="eyebrow">Origins & quality</div><h2>Authentic origins, thoughtful quality.</h2></div>
+  <div class="split">
+    <div class="copy-block"><div class="eyebrow">Native sourcing</div><h3>Direct from six home regions</h3><p><b>Full traceability:</b> ingredients sourced directly from their native regions.</p><p><b>Global terroirs:</b> Sub-Saharan Africa, Canada and South America.</p><p><b>Regional heritage:</b> Mediterranean Europe, Asia and Oceania.</p></div>
+    <div class="copy-block"><div class="eyebrow">Ingredient standards</div><h3>Gourmet, organic & fair trade</h3><p><b>Organic certified:</b> pure ingredients without synthetic additives.</p><p><b>Fair trade:</b> equitable wages for small local farmers.</p><p><b>Sustainable impact:</b> long-term support for local communities.</p></div>
+  </div>
+</section>
+
+<section id="ecrin">
+  <div class="section-head"><div class="eyebrow">Artisanal design inside the box</div><h2>A keepsake to give and treasure.</h2></div>
+  <div class="pack-grid">
+    <img src="images/box.jpg" alt="Open Voyage Gourmand box with six engraved chocolates">
+    <div class="mini-cards">
+      <article class="mini"><h3>Six engraved squares</h3><p>Custom continent maps and regional symbols pressed into cocoa.</p></article>
+      <article class="mini"><h3>Fine script typography</h3><p>Delicate lettering identifies every region and flavour.</p></article>
+      <article class="mini"><h3>A cultural booklet</h3><p>Every box includes an illustrated guide exploring each continent’s culinary roots.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="cream">
+  <div class="section-head"><div class="eyebrow">Luxury packaging & eco-responsibility</div><h2>Luxury with a conscience.</h2></div>
+  <div class="cards">
+    <article class="card" style="background:white"><div class="symbol">◇</div><h3>Rigid keepsake case</h3><p>A sleek structure inspired by haute chocolaterie houses.</p></article>
+    <article class="card" style="background:white"><div class="symbol">✧</div><h3>Vintage map & gold foil</h3><p>Cartographic artwork accented with refined metallic details.</p></article>
+    <article class="card" style="background:white"><div class="symbol" style="color:var(--sage)">♻</div><h3>Zero single-use plastic</h3><p>100% recyclable materials and FSC-certified sustainable paper.</p></article>
+  </div>
+</section>
+
+<section id="collectionner">
+  <div class="section-head"><div class="eyebrow">For the curious and the discerning</div><h2>A gift worth sharing.</h2></div>
+  <div class="stats">
+    <div class="stat"><strong>25–60</strong><span>Core age group</span><p>Adults seeking refined culinary experiences.</p></div>
+    <div class="stat"><strong> CSP+</strong><span>Market positioning</span><p>Appreciators of craftsmanship, niche brands and memorable discoveries.</p></div>
+    <div class="stat"><strong>2-in-1</strong><span>Gift & personal treat</span><p>Foodies, chocolate lovers and curious travellers.</p></div>
+  </div>
+</section>
+
+<section class="cream">
+  <div class="section-head"><div class="eyebrow">Where to find us</div><h2>A selective retail experience.</h2></div>
+  <div class="sales">
+    <article class="mini"><h3>Gourmet shops & fine food boutiques</h3><p>Curated artisanal food boutiques.</p></article>
+    <article class="mini"><h3>Department store food halls</h3><p>Flagship luxury gastronomy spaces.</p></article>
+    <article class="mini"><h3>International airport duty-free</h3><p>An ideal souvenir for global travellers.</p></article>
+    <article class="mini"><h3>Direct e-commerce store</h3><p>Nationwide online delivery for enthusiasts.</p></article>
+  </div>
+</section>
+
+<section>
+  <div class="section-head"><div class="eyebrow">Pricing strategy & brand endorsement</div><h2>A premium gifting experience.</h2></div>
+  <div class="price-grid">
+    <div>
+      <div class="price"><small>Retail price range</small><strong>18 € – 24 €</strong><p>Reflects rare organic ingredients and luxury gift packaging.</p></div>
+      <div class="price"><small>Brand ambassador</small><h3 style="margin:8px 0">Renowned pastry chef or travel host</h3><p>Embodies culinary excellence and global cultural curiosity.</p></div>
+    </div>
+    <img class="flavour-photo" src="images/flavours.jpg" alt="Presentation of the six Voyage Gourmand chocolates">
+  </div>
+</section>
+
+
+<section class="shop-section" id="shop">
+  <div class="section-head">
+    <div class="eyebrow">The Voyage Gourmand boutique</div>
+    <h2>Bring the journey home.</h2>
+    <p>Discover the signature gift box: six handcrafted chocolates, six destinations, one unforgettable tasting experience.</p>
+  </div>
+  <div class="shop-product">
+    <img src="images/box.jpg" alt="The Voyage Gourmand signature box with six chocolates">
+    <div class="shop-copy">
+      <div class="eyebrow">The signature collection · 6 pieces</div>
+      <h2>The Six Continents Box</h2>
+      <div class="shop-price">€22.00</div>
+      <p>A tasting journey through six regions, presented in our keepsake gift box. Includes six engraved chocolates and an illustrated cultural booklet.</p>
+      <p><strong>In the box:</strong> Africa, North America, South America, Europe, Asia and Oceania.</p>
+      <div class="shop-actions">
+        <div class="qty"><button aria-label="Decrease quantity" onclick="changeQty(-1)">−</button><span id="qty-value">1</span><button aria-label="Increase quantity" onclick="changeQty(1)">+</button></div>
+        <button class="shop-button" onclick="addToCart()">Add to bag · €<span id="add-total">22.00</span></button>
+      </div>
+      <p class="shop-small">Demonstration shop for a course project. No real payment or order will be processed.</p>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="eyebrow">A cultural booklet inside every box</div>
+  <h2>Une bouchée.<br>Six continents.</h2>
+  <p>Every box includes an illustrated story guide exploring each continent’s culinary roots.</p>
+  <div class="rule"></div>
+  <div class="tagline">Thank you — enjoy the journey.</div>
+</section>
+</main>
+<footer><span>© Voyage Gourmand</span><span>More than chocolate: a journey.</span></footer>
+
+<div class="shop-overlay" id="shop-overlay" role="dialog" aria-modal="true" aria-labelledby="cart-title" onclick="if(event.target===this)closeCart()">
+  <div class="shop-panel">
+    <button class="shop-close" aria-label="Close" onclick="closeCart()">×</button>
+    <div id="cart-view">
+      <div class="eyebrow">Your selection</div>
+      <h2 id="cart-title">Your shopping bag</h2>
+      <div id="cart-items"><p class="shop-small">Your bag is empty for now.</p></div>
+      <div class="cart-total"><span>Total</span><span id="cart-total">€0.00</span></div>
+      <button class="shop-button" id="checkout-start" style="width:100%" onclick="showCheckout()" disabled>Continue to checkout</button>
+      <p class="shop-small">Demo only · no payment will be taken.</p>
+    </div>
+    <div id="checkout-view" style="display:none">
+      <div class="eyebrow">Almost there</div>
+      <h2>Delivery details</h2>
+      <form class="checkout-form" onsubmit="placeDemoOrder(event)">
+        <label>Full name<input required name="name" autocomplete="name" placeholder="Your name"></label>
+        <label>Email address<input required type="email" name="email" autocomplete="email" placeholder="you@example.com"></label>
+        <label>Delivery address<textarea required name="address" rows="3" autocomplete="street-address" placeholder="Street, postcode, city"></textarea></label>
+        <p class="shop-small">This is a fictional checkout for the class website mockup. Do not enter real personal or payment information.</p>
+        <button class="shop-button" type="submit">Confirm demo order</button>
+        <button type="button" class="shop-small" style="border:0;background:none;text-decoration:underline;cursor:pointer" onclick="backToCart()">Back to bag</button>
+      </form>
+    </div>
+    <div class="confirmation" id="confirmation-view">
+      <div class="check">✓</div>
+      <div class="eyebrow">Order confirmed · demo</div>
+      <h2>Thank you for your journey!</h2>
+      <p>Your sample order <strong id="order-number"></strong> has been created.</p>
+      <p class="shop-small">No real order has been sent and no payment has been made.</p>
+      <button class="shop-button" onclick="closeCart()">Continue exploring</button>
+    </div>
+  </div>
+</div>
+<script>
+const UNIT_PRICE = 22;
+let quantity = 1;
+let cartQuantity = 0;
+function money(value){return '€' + value.toFixed(2);}
+function changeQty(delta){
+  quantity = Math.max(1, Math.min(12, quantity + delta));
+  document.getElementById('qty-value').textContent = quantity;
+  document.getElementById('add-total').textContent = (quantity * UNIT_PRICE).toFixed(2);
+}
+function addToCart(){
+  cartQuantity += quantity;
+  document.getElementById('cart-count').textContent = cartQuantity;
+  renderCart();
+  openCart();
+}
+function renderCart(){
+  const items = document.getElementById('cart-items');
+  const total = cartQuantity * UNIT_PRICE;
+  items.innerHTML = cartQuantity
+    ? `<div class="cart-line"><span>The Six Continents Box<br><small>€22.00 × ${cartQuantity}</small></span><span>${money(total)} <button aria-label="Remove one box" onclick="removeOne()" style="border:0;background:none;color:#956b42;cursor:pointer">−</button></span></div>`
+    : '<p class="shop-small">Your bag is empty for now.</p>';
+  document.getElementById('cart-total').textContent = money(total);
+  document.getElementById('checkout-start').disabled = cartQuantity === 0;
+}
+function removeOne(){cartQuantity=Math.max(0,cartQuantity-1);document.getElementById('cart-count').textContent=cartQuantity;renderCart();}
+function openCart(){renderCart();document.getElementById('shop-overlay').classList.add('open');document.body.style.overflow='hidden';}
+function closeCart(){document.getElementById('shop-overlay').classList.remove('open');document.body.style.overflow='';}
+function showCheckout(){document.getElementById('cart-view').style.display='none';document.getElementById('checkout-view').style.display='block';}
+function backToCart(){document.getElementById('checkout-view').style.display='none';document.getElementById('cart-view').style.display='block';}
+function placeDemoOrder(event){
+  event.preventDefault();
+  document.getElementById('checkout-view').style.display='none';
+  document.getElementById('confirmation-view').style.display='block';
+  document.getElementById('order-number').textContent='#VG-' + Math.floor(100000 + Math.random()*900000);
+  cartQuantity=0;
+  document.getElementById('cart-count').textContent='0';
+  renderCart();
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeCart();});
+</script>
+
+</body>
+</html>
